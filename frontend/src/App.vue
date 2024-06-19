@@ -3,15 +3,11 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+ <div class="flex justify-center items-center h-screen">
+    <h1 class="text3xl font-bold underline">
+      "Hello World from App"
+    </h1>
+</div>
 </template>
 
 <style scoped>
