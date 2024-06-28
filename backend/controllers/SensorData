@@ -1,0 +1,46 @@
+using Microsoft.AspNetCore.Mvc;
+using iJerkPro.Models;
+
+namespace iJerkPro.controllers{
+    [Route("api/[Controller]")]
+    [ApiController]
+    public class SensorDataController : ControllerBase
+    {
+        private readonly SensorDataCache _cache;
+
+        public SensorDataController(SensorDataCache cache)
+        {
+            this._cache = cache;
+        }
+
+/*      [HttpGet]
+        public IActionResult GetSensorData()
+        {
+            return ok(new List<Jerks>
+            {
+                new SensorData
+            });
+        }
+*/
+            [HttpPost]
+            public IActionResult CreateSensorData([FromBody] SensorData Jerks)
+            {
+                if(Jerks == null){
+                    return BadRequest();
+                }
+
+                _cache.AddSensorData(Jerks);
+                // Save product
+                // return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+                return Ok(Jerks);
+            }
+
+            [HttpGet]
+
+            public IActionResult GetSensorData(){
+                var allData = _cache.GetAllSensorData();
+                
+                return Ok(allData)
+            }
+    } 
+}

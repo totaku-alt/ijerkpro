@@ -1,0 +1,16 @@
+public class SensorDataCache{
+    private readonly AllSensorData<SensorData> _sensorDataList;
+
+    public SensorDataCache()
+    {
+        this._sensorDataList = new AllSensorData<SensorData>();
+    }
+
+    public void AddSensorData(SensorData data){
+        _sensorDataList.Add(data);
+    }
+
+    public IEnumerable<SensorData> GetAllSensorData(){
+        return _sensorDataList;
+    }
+}

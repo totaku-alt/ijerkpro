@@ -1,0 +1,9 @@
+public class iJerkPro{
+    public iJerkPro(){
+        Counter = 0;
+    }
+
+    //public int ID { get; set; }
+    public int Jerks { get; set; }
+
+}
